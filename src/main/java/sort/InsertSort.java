@@ -1,5 +1,14 @@
 package sort;
 
+/**
+ * 循环不变式：
+ * target[0...j-1]表示已经排好的数组，target[j...n-1]表示待排部分
+ * <p>
+ * 初始：j=1，target[0]显然是已排序的
+ * 保持:  假设对j成立，target[0...j-1]已排序 [j...n-1]待排，
+ * [0...j-1] [j...n-1]
+ * 对于下一次循环，分析内层跟外层循环，j=j+1,key=target[j-1]
+ */
 public class InsertSort implements Sort {
 
     public void sort(Integer[] target) {
