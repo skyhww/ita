@@ -2,6 +2,8 @@ package sort;
 
 /**
  * 合并排序
+ *
+ * @author hanweiwei
  */
 public class MergeSort implements Sort {
     public void sort(Integer[] target) {
