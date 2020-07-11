@@ -10,6 +10,13 @@ public class QuickSort implements Sort {
         quick(target, 0, target.length - 1);
     }
 
+    /**
+     * 每次排序前，增加一个随机交换
+     *
+     * @param target
+     * @param p
+     * @param r
+     */
     private void quick(Integer[] target, Integer p, Integer r) {
         if (p < r) {
             Integer q = partition(target, p, r);
@@ -23,7 +30,8 @@ public class QuickSort implements Sort {
      * q的左边的key<=x
      * <p>
      * O(n)
-     *数组被分为三个部分 [p,q] [q+1,j] [j+1,r]
+     * 数组被分为三个部分 [p,q] [q+1,j] [j+1,r]
+     *
      * @param target
      * @param p
      * @param r
