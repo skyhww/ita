@@ -7,6 +7,11 @@ public class CountingSort implements Sort {
 
     private Integer maxValue;
 
+    /**
+     * 时间复杂度正比于max{maxValue,target.length}
+     *
+     * @param target
+     */
     public void sort(Integer[] target) {
         int[] c = new int[maxValue + 1];
         for (int integer : target) {
