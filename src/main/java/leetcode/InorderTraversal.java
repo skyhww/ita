@@ -33,10 +33,35 @@ public class InorderTraversal {
         return integerList;
     }
 
+    public List<Integer> preorderTraversal(TreeNode root) {
+        List<Integer> integerList = new ArrayList<>();
+        Stack<TreeNode> nodeStack = new Stack<>();
+        //root：待访问节点
+        while (root != null || !nodeStack.isEmpty()) {
+            if (root != null) {
+                integerList.add(root.val);
+                if (root.right != null) {
+                    nodeStack.push(root.right);
+                }
+                root = root.left;
+            } else {
+                TreeNode p = nodeStack.pop();
+                integerList.add(p.val);
+                if (p.right != null) {
+                    nodeStack.push(p.right);
+                }
+                root = p.left;
+            }
+
+        }
+        return integerList;
+
+    }
+
     public static void main(String[] args) {
         TreeNode treeNode = new TreeNode(3);
         treeNode.left = new TreeNode(1);
-        treeNode.left.right=new TreeNode(2);
+        treeNode.left.right = new TreeNode(2);
         new InorderTraversal().inorderTraversal(treeNode);
     }
 }
