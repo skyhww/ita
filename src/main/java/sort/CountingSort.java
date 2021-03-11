@@ -1,5 +1,8 @@
 package sort;
 
+/**
+ * @author hanweiwei
+ */
 public class CountingSort implements Sort {
     public CountingSort(Integer maxValue) {
         this.maxValue = maxValue;

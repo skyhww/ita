@@ -3,6 +3,7 @@ package sort;
 /**
  * 快速排序
  * A[p,q] [q+1,r]   [p,q]中的元素都小于等于[q+1,r]中的元素
+ * @author hanweiwei
  */
 public class QuickSort implements Sort {
 

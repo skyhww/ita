@@ -3,13 +3,18 @@ package bully;
 import java.util.List;
 
 public interface Node {
-    Integer getNumber();
+    Integer getId();
 
-    List<PeerHandler> getPeerHandler();
+    /**
+     * 选举
+     */
+    void election();
 
     State getState();
 
-    void start();
+    List<PeerStub> peerHandlers();
 
-    void election();
+    enum State {
+        Down, Reorganization, Normal
+    }
 }

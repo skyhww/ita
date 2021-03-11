@@ -2,32 +2,31 @@ package bully;
 
 import java.util.concurrent.TimeoutException;
 
-public class NettyHandler implements PeerHandler {
-    private BullyNode bullyNode;
+public class BullyPeer implements Peer {
+    private Integer id;
 
-    public NettyHandler(BullyNode bullyNode) {
-        this.bullyNode = bullyNode;
-    }
-
-    @Override
-    public boolean halt() throws TimeoutException {
-
-        return false;
-    }
-
-    @Override
-    public State getState() throws TimeoutException {
-        return null;
+    public BullyPeer(Integer id) {
+        this.id = id;
     }
 
     @Override
     public Integer getId() {
+        return id;
+    }
+
+    @Override
+    public NetChannel getChannel() {
         return null;
     }
 
     @Override
-    public void ping() {
+    public Node.State ping() throws TimeoutException {
+        return null;
+    }
 
+    @Override
+    public boolean halt() throws TimeoutException {
+        return false;
     }
 
     @Override

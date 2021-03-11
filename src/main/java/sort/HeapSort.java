@@ -2,6 +2,7 @@ package sort;
 
 /**
  * 最大堆
+ * @author hanweiwei
  */
 public class HeapSort implements Sort {
     public void sort(Integer[] target) {
@@ -15,7 +16,7 @@ public class HeapSort implements Sort {
     }
 
     /**
-     * 堆化，假设左右子堆都是已排序的
+     * 堆化，假设左右子堆都是已排序的，递归版本
      * 时间复杂度 logN
      *
      * @param target

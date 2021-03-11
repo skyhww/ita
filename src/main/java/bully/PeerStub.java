@@ -2,16 +2,17 @@ package bully;
 
 import java.util.concurrent.TimeoutException;
 
-public interface PeerHandler {
+/**
+ * 对端stub，工作在应用层
+ */
+public interface PeerStub {
+
+    Node.State ping() throws TimeoutException;
+
     boolean halt() throws TimeoutException;
-
-    State getState() throws TimeoutException;
-
-    Integer getId();
-
-    void ping();
 
     boolean newCoordinator() throws TimeoutException;
 
     boolean ready() throws TimeoutException;
+
 }
