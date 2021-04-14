@@ -25,9 +25,7 @@ public class MergeSort implements Sort {
         Integer[] left = new Integer[q - p + 2];
         Integer[] right = new Integer[r - q + 1];
 
-        for (int i = p; i <= q; i++) {
-            left[i - p] = target[i];
-        }
+        if (q + 1 - p >= 0) System.arraycopy(target, p, left, 0, q + 1 - p);
         left[q - p + 1] = Integer.MAX_VALUE;
         for (int i = q + 1; i <= r; i++) {
             right[i - q - 1] = target[i];
