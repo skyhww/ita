@@ -6,6 +6,7 @@ import java.util.concurrent.atomic.AtomicReference;
  * 线程安全的stack
  *
  * @param <T>
+ * @author hanweiwei
  */
 public class Stack<T> {
     private AtomicReference<Node<T>> tail = new AtomicReference<>();
@@ -21,14 +22,14 @@ public class Stack<T> {
         }
     }
 
-    public Node<T> pop() {
+    public T pop() {
         while (true) {
             Node<T> t = tail.get();
             if (t == null) {
                 return null;
             }
             if (tail.compareAndSet(t, t.next)) {
-                return t;
+                return t.data;
             }
         }
 
