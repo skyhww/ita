@@ -1,5 +1,7 @@
 package sort;
 
+import java.util.Arrays;
+
 /**
  * @author hanweiwei
  */
@@ -25,9 +27,7 @@ public class CountingSort implements Sort {
             c[i] = c[i] + c[i - 1];
         }
         Integer[] b = new Integer[target.length];
-        for (int i = 0; i < b.length; i++) {
-            b[i] = 0;
-        }
+        Arrays.fill(b, 0);
         for (int i = target.length - 1; i >= 0; i--) {
             //小于等于x的元素的个数是1，那么x将会被放置在b[0]
             //从后往前放置，迭代也是从后往前，稳定

@@ -1,5 +1,6 @@
 package collection;
 
+import java.math.BigDecimal;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
@@ -46,5 +47,10 @@ public class Stack<T> {
         public Node(T data) {
             this.data = data;
         }
+    }
+
+    public static void main(String[] args) {
+        BigDecimal bigDecimal=   new BigDecimal(3328353790172957696L);
+        System.out.println(bigDecimal.divide(new BigDecimal(128)));
     }
 }
